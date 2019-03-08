@@ -76,33 +76,18 @@ docker run --name wcfclient_sample --rm -it -e HOST=172.26.236.119 microsoft/dot
 - [`wcfservice-windowsservercore-ltsc2016`, `wcfservice` (*Dockerfile*)](https://github.com/dotnet/dotnet-docker/blob/master/samples/wcfapp/Dockerfile.web)
 - [`wcfclient-windowsservercore-ltsc2016`, `wcfclient` (*Dockerfile*)](https://github.com/dotnet/dotnet-docker/blob/master/samples/wcfapp/Dockerfile.client)
 
-# What is the .NET Framework?
+# Support
 
-The [.NET Framework](https://www.microsoft.com/net/framework) is a general purpose development platform maintained by Microsoft. It is the most popular way to build client and server applications for Windows and Windows Server. It is included with Windows, Windows Server and Windows Server Core. It includes server technologies such as ASP.NET Web Forms, ASP.NET MVC and Windows Communication Framework (WCF) applications, which you can run in Docker containers.
+See the [.NET Framework Lifecycle FAQ](https://support.microsoft.com/en-us/help/17455/lifecycle-faq-net-framework)
 
-.NET has several capabilities that make development easier, including automatic memory management, (runtime) generic types, reflection, asynchrony, concurrency, and native interop. Millions of developers take advantage of these capabilities to efficiently build high-quality web and client applications.
+# Feedback
 
-You can use C#, F# and VB to write .NET Framework apps. C# is simple, powerful, type-safe, and object-oriented while retaining the expressiveness and elegance of C-style languages. F# is a multi-paradigm programming language, enabling both functional and object-oriented patterns and practices. VB is a rapid development programming language with the deepest integration between the language and Visual Studio, providing the fastest path to a working app.   
+* [File a .NET Framework Docker issue](https://github.com/microsoft/dotnet-framework-docker/issues)
+* [Report a .NET Framework problem](https://developercommunity.visualstudio.com/spaces/61/index.html)
+* [Ask on Stack Overflow](https://stackoverflow.com/questions/tagged/.net)
+* [Contact Microsoft Support](https://support.microsoft.com/contactus/)
 
-The .NET Framework was first released by Microsoft in 2001. The latest version is [.NET Framework 4.7.2](https://www.microsoft.com/net/framework).
+# License
 
-> https://docs.microsoft.com/dotnet/framework/
-
-![dotnet-icon](https://cloud.githubusercontent.com/assets/2608468/19951790/a0458278-a11d-11e6-86e4-660aaa22aa3c.png)
-
-# Issues
-
-If you have any problems with or questions about this image, please contact us through a [GitHub issue](https://github.com/microsoft/dotnet-framework-docker/issues).
-
-# Licenses
-
-* [Windows Server Core license](https://hub.docker.com/r/microsoft/windowsservercore/)
-
-# Related Repos
-
-See the following related repos for other application types:
-
-* [microsoft/dotnet](https://hub.docker.com/r/microsoft/dotnet/) for .NET Core images.
-* [dotnet/framework/aspnet](https://hub.docker.com/_/microsoft-dotnet-framework-aspnet) for ASP.NET Web Forms and MVC images.
-* [microsoft/dotnet-framework](https://hub.docker.com/r/microsoft/dotnet-framework/) for .NET Framework images (for web applications, see microsoft/aspnet).
-* [microsoft/wcf](https://hub.docker.com/r/microsoft/wcf/) for WCF images.
+* [.NET Framework and Windows Server Core license](https://hub.docker.com/_/microsoft-windows-servercore/)
+* [Pricing and licensing for Windows Server 2019](https://www.microsoft.com/en-us/cloud-platform/windows-server-pricing)

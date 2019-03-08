@@ -163,7 +163,7 @@
     },
     {
       "name": "dotnet/framework/sdk",
-      "readmePath": "README.runtime.md",
+      "readmePath": "README.sdk.md",
       "images": [
         {
           "sharedTags": {

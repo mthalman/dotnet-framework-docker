@@ -36,7 +36,7 @@ docker run --rm mcr.microsoft.com/dotnet/framework/samples:dotnetapp
 
 .NET Core:
 
-* [dotnet/core](ttps://hub.docker.com/_/microsoft-dotnet-core/): .NET Core and ASP.NET Core
+* [dotnet/core](ttps://hub.docker.com/_/microsoft-dotnet-core/): .NET Core
 * [dotnet/core-nightly](https://hub.docker.com/_/microsoft-dotnet-core-nightly/): .NET Core (Preview)
 * [dotnet/core/samples](ttps://hub.docker.com/_/microsoft-dotnet-core-samples/): .NET Core Samples
 
@@ -70,19 +70,16 @@ For more information about these images and their history, please see [(`microso
 
 # Support
 
-See [Microsoft Support for .NET Core](https://github.com/dotnet/core/blob/master/microsoft-support.md) for the support lifecycle.
+See the [.NET Framework Lifecycle FAQ](https://support.microsoft.com/en-us/help/17455/lifecycle-faq-net-framework)
 
 # Feedback
 
 * [File a .NET Framework Docker issue](https://github.com/microsoft/dotnet-framework-docker/issues)
----* [File a .NET Framework issue](https://github.com/dotnet/core/issues)
----* [File an ASP.NET issue](https://github.com/aspnet/home/issues)
----WCF?* [File an issue for other components](Documentation/core-repos.md)
-* [Ask on Stack Overflow](https://stackoverflow.com/questions/tagged/.net-core)
+* [Report a .NET Framework problem](https://developercommunity.visualstudio.com/spaces/61/index.html)
+* [Ask on Stack Overflow](https://stackoverflow.com/questions/tagged/.net)
 * [Contact Microsoft Support](https://support.microsoft.com/contactus/)
 
 # License
 
----* [.NET Core license](https://github.com/dotnet/dotnet-docker/blob/master/LICENSE)
----* [Windows Server Core license](https://hub.docker.com/r/microsoft/windowsservercore/)
+* [.NET Framework and Windows Server Core license](https://hub.docker.com/_/microsoft-windows-servercore/)
 * [Pricing and licensing for Windows Server 2019](https://www.microsoft.com/en-us/cloud-platform/windows-server-pricing)
