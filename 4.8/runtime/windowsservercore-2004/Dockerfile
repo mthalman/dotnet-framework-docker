@@ -1,6 +1,6 @@
 # escape=`
 
-FROM mcr.microsoft.com/windows/insider:10.0.19023.1
+FROM mcr.microsoft.com/windows/servercore/insider:10.0.19023.1
 
 # Enable detection of running in a container
 ENV DOTNET_RUNNING_IN_CONTAINER=true
