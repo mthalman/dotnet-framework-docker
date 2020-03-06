@@ -1,9 +1,12 @@
 # escape=`
 
-FROM mcr.microsoft.com/windows/servercore/insider:10.0.19023.1
+FROM mcr.microsoft.com/windows/servercore:2004
 
-# Enable detection of running in a container
-ENV DOTNET_RUNNING_IN_CONTAINER=true
+ENV `
+    # Enable detection of running in a container
+    DOTNET_RUNNING_IN_CONTAINER=true `
+    # Ngen workaround: https://github.com/microsoft/dotnet-framework-docker/issues/231
+    COMPLUS_NGenProtectedProcess_FeatureEnabled=0
 
 RUN `
     # Ngen top of assembly graph to optimize a set of frequently used assemblies

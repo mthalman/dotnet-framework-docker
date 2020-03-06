@@ -20,9 +20,11 @@ RUN Invoke-WebRequest https://api.nuget.org/packages/microsoft.net.compilers.2.9
     &C:\Windows\Microsoft.NET\Framework64\v4.0.30319\ngen.exe install c:\RoslynCompilers\tools\VBCSCompiler.exe /ExeConfig:c:\RoslynCompilers\tools\VBCSCompiler.exe | `
     &C:\Windows\Microsoft.NET\Framework\v4.0.30319\ngen.exe install c:\RoslynCompilers\tools\csc.exe /ExeConfig:c:\RoslynCompilers\tools\csc.exe | `
     &C:\Windows\Microsoft.NET\Framework\v4.0.30319\ngen.exe install c:\RoslynCompilers\tools\vbc.exe /ExeConfig:c:\RoslynCompilers\tools\vbc.exe | `
-    &C:\Windows\Microsoft.NET\Framework\v4.0.30319\ngen.exe install c:\RoslynCompilers\tools\VBCSCompiler.exe  /ExeConfig:c:\RoslynCompilers\tools\VBCSCompiler.exe
+    &C:\Windows\Microsoft.NET\Framework\v4.0.30319\ngen.exe install c:\RoslynCompilers\tools\VBCSCompiler.exe  /ExeConfig:c:\RoslynCompilers\tools\VBCSCompiler.exe; `
+    &C:\Windows\Microsoft.NET\Framework64\v4.0.30319\ngen.exe update; `
+    &C:\Windows\Microsoft.NET\Framework\v4.0.30319\ngen.exe update
 
-ENV ROSLYN_COMPILER_LOCATION c:\\RoslynCompilers\\tools
+ENV ROSLYN_COMPILER_LOCATION c:\RoslynCompilers\tools
 
 EXPOSE 80
 

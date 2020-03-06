@@ -1,7 +1,7 @@
 # escape=`
 
 ARG REPO=mcr.microsoft.com/dotnet/framework/runtime
-FROM $REPO:4.8-windowsservercore-2004
+FROM $REPO:3.5-windowsservercore-2004
 
 # Install NuGet CLI
 ENV NUGET_VERSION 5.5.0
@@ -14,10 +14,10 @@ RUN `
     curl -fSLo vs_TestAgent.exe https://download.visualstudio.microsoft.com/download/pr/c650b629-fb28-4b7a-b943-1d293b185299/2402fa34a5b58dade1f1badc6410f35280750b7691de0b32793f94b1600a8c1c/vs_TestAgent.exe `
     && start /w vs_TestAgent.exe --quiet --norestart --nocache --wait `
     && powershell -Command "if ($err = dir $Env:TEMP -Filter dd_setup_*_errors.log | where Length -gt 0 | Get-Content) { throw $err }" `
-    && del vs_TestAgent.exe `
-    `
+    && del vs_TestAgent.exe 
+    
     # Install VS Build Tools
-    && curl -fSLo vs_BuildTools.exe https://download.visualstudio.microsoft.com/download/pr/c650b629-fb28-4b7a-b943-1d293b185299/5303c184326b53784d6822601cce9eab01660410078b496102117e88c2eee1bb/vs_BuildTools.exe `
+RUN curl -fSLo vs_BuildTools.exe https://download.visualstudio.microsoft.com/download/pr/c650b629-fb28-4b7a-b943-1d293b185299/5303c184326b53784d6822601cce9eab01660410078b496102117e88c2eee1bb/vs_BuildTools.exe `
     # Installer won't detect DOTNET_SKIP_FIRST_TIME_EXPERIENCE if ENV is used, must use setx /M
     && setx /M DOTNET_SKIP_FIRST_TIME_EXPERIENCE 1 `
     && start /w vs_BuildTools.exe ^ `
@@ -30,7 +30,7 @@ RUN `
     && powershell -Command "if ($err = dir $Env:TEMP -Filter dd_setup_*_errors.log | where Length -gt 0 | Get-Content) { throw $err }" `
     && del vs_BuildTools.exe `
     `
-    # Cleanup
+    #Cleanup
     && rmdir /S /Q "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer" `
     && powershell Remove-Item -Force -Recurse "%TEMP%\*" `
     && rmdir /S /Q "%ProgramData%\Package Cache"
@@ -41,9 +41,7 @@ RUN curl -fSLo MSBuild.Microsoft.VisualStudio.Web.targets.zip https://dotnetbina
     && del MSBuild.Microsoft.VisualStudio.Web.targets.zip
 
 ENV DOTNET_USE_POLLING_FILE_WATCHER=true `
-    ROSLYN_COMPILER_LOCATION="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\Roslyn" `
-    # Ngen workaround: https://github.com/microsoft/dotnet-framework-docker/issues/231
-    COMPLUS_NGenProtectedProcess_FeatureEnabled=0
+    ROSLYN_COMPILER_LOCATION="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\Roslyn"
 
 # ngen assemblies queued by VS installers - must be done in cmd shell to avoid access issues
 RUN `
