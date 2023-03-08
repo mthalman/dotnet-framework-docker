@@ -22,15 +22,5 @@ public static class Program
         $"88       88 8PP\"\"\"\"\"\"\"   88      88       )888({nl}" +
         $"88       88 \"8b,   ,aa   88,     88     ,d8\" \"8b,{nl}" +
         $"88       88  `\"Ybbd8\"'   \"Y888   88    8P'     `Y8{nl}");
-
-        // .NET information
-        WriteLine(RuntimeInformation.FrameworkDescription);
-        WriteLine(RuntimeInformation.OSDescription);
-
-        WriteLine();
-
-        // Environment information
-        WriteLine($"{nameof(RuntimeInformation.OSArchitecture)}: {RuntimeInformation.OSArchitecture}");
-        WriteLine($"{nameof(Environment.ProcessorCount)}: {Environment.ProcessorCount}");
     }
 }
